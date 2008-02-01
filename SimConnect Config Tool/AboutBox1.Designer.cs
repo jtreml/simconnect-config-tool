@@ -109,13 +109,13 @@
 			// 
 			// linkLabel1
 			// 
-			this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(6, 33);
+			this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(6, 47);
 			this.linkLabel1.Location = new System.Drawing.Point(103, 141);
 			this.linkLabel1.Name = "linkLabel1";
 			this.linkLabel1.Size = new System.Drawing.Size(314, 35);
 			this.linkLabel1.TabIndex = 25;
 			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "Visit http://www.juergentreml.de/fsxget for more information.";
+			this.linkLabel1.Text = "Visit http://www.juergentreml.de/simconnectconfigtool for more information.";
 			this.linkLabel1.UseCompatibleTextRendering = true;
 			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
