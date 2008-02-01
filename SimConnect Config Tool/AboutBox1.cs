@@ -105,11 +105,11 @@ namespace FSX_Config_Tool
 			try
 			{
 				linkLabel1.LinkVisited = true;
-				System.Diagnostics.Process.Start("http://www.juergentreml.de/fsxget/");
+				System.Diagnostics.Process.Start("http://www.juergentreml.de/simconnectconfigtool/");
 			}
 			catch
 			{
-				MessageBox.Show("Unable to open http://www.juergentreml.de/fsxget/!");
+				MessageBox.Show("Unable to open http://www.juergentreml.de/simconnectconfigtool/!");
 			}
 		}
 	}
