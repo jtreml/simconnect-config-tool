@@ -21,6 +21,7 @@ namespace FSX_Config_Tool
 		XmlDocument xmldSimCon;
 
 		String szFileSimCon = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Microsoft\\FSX\\SimConnect.xml";
+		String szFileSimConLocal = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\FSX\\SimConnect.xml";
 
 #if DEBUG
 		String szFileSimConSample = Application.StartupPath + "\\..\\..\\SimConnect.sample";
@@ -39,6 +40,32 @@ namespace FSX_Config_Tool
 
 			bool bLoadSample = false;
 
+			if (File.Exists(szFileSimConLocal))
+			{
+				if (File.Exists(szFileSimCon))
+				{
+					try
+					{
+						File.Delete(szFileSimConLocal);
+					}
+					catch
+					{
+						MessageBox.Show("There are to SimConnect.xml files on your system. One in your local and one in your roaming directory. Cannot delete the local file. Aborting!", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+				else
+				{
+					try
+					{
+						File.Move(szFileSimConLocal, szFileSimCon);
+					}
+					catch
+					{
+						MessageBox.Show("Your SimConnect.xml file is located in your local AppData directory. Cannot move the file to roaming directory. Aborting!", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+			}
+
 			if (File.Exists(szFileSimCon))
 			{
 				radioButton2.Checked = true;
@@ -55,6 +82,16 @@ namespace FSX_Config_Tool
 
 					if (xmldSimCon["SimBase.Document"] == null)
 						throw new Exception("Invalid existing SimConnect config file.");
+
+					if (xmldSimCon["SimBase.Document"]["Disabled"] != null)
+					{
+						if (xmldSimCon["SimBase.Document"]["Disabled"].InnerText.ToLower() == "true")
+							checkBox1.Checked = false;
+						else
+							checkBox1.Checked = true;
+					}
+					else
+						checkBox1.Checked = true;
 				}
 				catch
 				{
@@ -215,7 +252,7 @@ namespace FSX_Config_Tool
 					// Set enabled or disabled state
 					if (xmldSimCon["SimBase.Document"]["Disabled"] == null)
 					{
-						XmlNode xmlnNew = xmldSimCon.CreateTextNode("Disabled");
+						XmlNode xmlnNew = xmldSimCon.CreateElement("Disabled");
 						xmldSimCon["SimBase.Document"].AppendChild(xmlnNew);
 					}
 
@@ -223,11 +260,6 @@ namespace FSX_Config_Tool
 						xmldSimCon["SimBase.Document"]["Disabled"].InnerText = "False";
 					else
 						xmldSimCon["SimBase.Document"]["Disabled"].InnerText = "True";
-
-
-					// Set connection entries
-					// TODO: still missing...
-
 
 					// Save config file
 					try
@@ -402,6 +434,7 @@ namespace FSX_Config_Tool
 			foreach (ListViewItem itemTemp in listView1.SelectedItems)
 			{
 				xmldSimCon["SimBase.Document"].RemoveChild((XmlNode)itemTemp.Tag);
+				bChanges = true;
 
 				updateListView();
 				return;
