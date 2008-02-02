@@ -249,8 +249,8 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SimConnect Config Tool"
-        "ProductCode" = "8:{D9D740F7-5A52-4E49-BE34-3DA89738E1C4}"
-        "PackageCode" = "8:{9B054167-4C3A-49BE-B387-1191F22B445F}"
+        "ProductCode" = "8:{C94558EB-6900-4DE2-8C75-970BCB1A99AB}"
+        "PackageCode" = "8:{58110119-3D30-49D0-893F-720F0F37C8D2}"
         "UpgradeCode" = "8:{3E41C8CD-9A19-44D5-B4C3-C39507ECF6D1}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
