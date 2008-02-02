@@ -249,9 +249,9 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SimConnect Config Tool"
-        "ProductCode" = "8:{F4B74BB9-1CCA-45C5-9806-44F26D0B65B7}"
-        "PackageCode" = "8:{A47FD7E8-5F26-4D8B-8DA6-C476137EABC3}"
-        "UpgradeCode" = "8:{A2599BB5-CD55-4134-9BE8-C846D8D00811}"
+        "ProductCode" = "8:{D9D740F7-5A52-4E49-BE34-3DA89738E1C4}"
+        "PackageCode" = "8:{9B054167-4C3A-49BE-B387-1191F22B445F}"
+        "UpgradeCode" = "8:{3E41C8CD-9A19-44D5-B4C3-C39507ECF6D1}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
@@ -380,7 +380,7 @@
             "Target" = "8:_38761C189D5740A1ADEEC1B80EA815F2"
             "Folder" = "8:_B3E16EDED7D844EB920A775ACFB7546D"
             "WorkingFolder" = "8:_0717B4A282CF4930B9A92A99B24D89E2"
-            "Icon" = "8:"
+            "Icon" = "8:_6EFDECFF0E9F4BAF877C385969648365"
             "Feature" = "8:"
             }
         }
@@ -794,7 +794,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_38761C189D5740A1ADEEC1B80EA815F2"
             {
-            "SourcePath" = "8:..\\SimConnect Config Tool\\obj\\Debug\\cfgtool.exe"
+            "SourcePath" = "8:..\\SimConnect Config Tool\\obj\\Release\\cfgtool.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0717B4A282CF4930B9A92A99B24D89E2"
