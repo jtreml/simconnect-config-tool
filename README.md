@@ -1,3 +1,5 @@
+**This project was originally hosted at [CodePlex](https://simconnectconfigtool.codeplex.com/).**
+
 # SimConnect Config Tool
 
 This little tool allows Flight Simulator X users to easily edit and setup their SimConnect configuration, e.g. in order to enable or disable remote applications such as [FSXGET](http://www.juergentreml.de/fsxget) to connect to Flight Simulator X.
